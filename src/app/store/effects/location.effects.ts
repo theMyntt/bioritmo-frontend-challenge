@@ -2,23 +2,22 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { LocationService } from '../../apis/location.service';
 import { fetchData, fetchDataSuccess } from '../actions/location.actions';
-import { catchError, map, mergeMap, of } from 'rxjs';
+import { catchError, map, mergeMap, of, switchMap } from 'rxjs';
+import { TLocationDTO } from '../../types/locaction';
 
 @Injectable()
 export class LocationEffects {
+  private readonly actions$ = inject(Actions);
   private readonly locationsService = inject(LocationService);
 
-  constructor(private actions$: Actions) {}
-
-  loadLocations$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(fetchData),
-      mergeMap(() =>
-        this.locationsService.fetchLocations().pipe(
-          map(data => fetchDataSuccess({ locations: data})), 
-          catchError(() => of({ type: '[Service] Load Locations Failure' })) 
-        )
+  featchLocationsEffect$ = createEffect(
+    () => {
+      return this.actions$.pipe(
+        ofType(fetchData),
+        switchMap(() => this.locationsService.fetchLocations().pipe(
+          map((locations: TLocationDTO) => fetchDataSuccess({ locations })),
+        ))
       )
-    )
-  );
+    }
+  )
 }
