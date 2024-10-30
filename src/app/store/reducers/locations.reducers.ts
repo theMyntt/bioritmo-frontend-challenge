@@ -1,7 +1,6 @@
-import { Action, createReducer } from '@ngrx/store';
-import { TLocationDTO } from '../../types/locaction';
-import { on } from '@ngrx/store';
+import { Action, createReducer, on } from '@ngrx/store';
 import { fetchDataSuccess } from '../actions/location.actions';
+import { TLocationDTO } from '../../types/locaction';
 
 export interface AppState {
   locations: TLocationDTO;
@@ -22,9 +21,9 @@ const _appReducer = createReducer(
   on(fetchDataSuccess, (state, { locations }) => ({
     ...state,
     locations: { ...state.locations, ...locations },
-  }))
+  })),
 );
 
-export function appReducer(state: AppState, action: Action<string>) {
+export function appReducer(state: AppState = initializerState, action: Action) {
   return _appReducer(state, action);
 }

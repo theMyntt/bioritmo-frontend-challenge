@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { LocationService } from '../../apis/location.service';
 import { fetchData, fetchDataSuccess } from '../actions/location.actions';
-import { catchError, from, lastValueFrom, map, mergeMap, of } from 'rxjs';
+import { catchError, map, mergeMap, of } from 'rxjs';
 
 @Injectable()
 export class LocationEffects {
@@ -14,9 +14,9 @@ export class LocationEffects {
     this.actions$.pipe(
       ofType(fetchData),
       mergeMap(() =>
-        from(this.locationsService.fetchLocations()).pipe(
-          mergeMap(response => lastValueFrom(response).then(data => fetchDataSuccess(data))),
-          catchError(() => of({ type: '[Service] Load Locations failure' }))
+        this.locationsService.fetchLocations().pipe(
+          map(data => fetchDataSuccess({ locations: data})), 
+          catchError(() => of({ type: '[Service] Load Locations Failure' })) 
         )
       )
     )
