@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.separator {
+  height: 15px;
+  width: 116px;
+  background-color: #000;
+}
