@@ -1,3 +1,4 @@
+<app-brand-text></app-brand-text>
 <button (click)="fetchLocations()">carregar</button>
 <div *ngIf="locations$ | async as locations">
   <p> {{ locations | json }} </p>

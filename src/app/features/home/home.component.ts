@@ -6,11 +6,12 @@ import { selectLocationState } from '../../store/selectors/locations.selector';
 import { AppState } from '../../store/reducers/locations.reducers';
 import { fetchData } from '../../store/actions/location.actions';
 import { CommonModule } from '@angular/common';
+import { BrandTextComponent } from './components/brand-text/brand-text.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BrandTextComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
