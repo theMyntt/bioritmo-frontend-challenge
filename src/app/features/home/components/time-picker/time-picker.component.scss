@@ -1,0 +1,66 @@
+:host {
+  padding: 20px;
+  border: 5px solid #e5e7eb;
+  color: #808080;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .title {
+    display: inherit;
+    align-items: center;
+    gap: inherit;
+  }
+  .time-options {
+    .option {
+      border-top: 2px solid #e5e7eb;
+      padding: 10px 0;
+      &:last-child {
+        border-bottom: 2px solid #e5e7eb;
+      }
+      display: flex;
+      justify-content: space-between;
+      .option-control {
+        display: inherit;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+  .incremental-options {
+    color: #000;
+    display: inherit;
+    justify-content: space-between;
+    .closed-gym {
+      display: inherit;
+      gap: 10px;
+    }
+    p > span {
+      font-weight: 700;
+    }
+  }
+  .buttons {
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    button {
+      transition: 0.3s;
+      width: 200px;
+      height: 50px;
+      font-weight: 900;
+      cursor: pointer;
+      &#find {
+        background-color: #ffb612;
+        border: 1px solid transparent;
+      }
+      &#clear {
+        background-color: #fff;
+        border: 1px solid #000;
+      }
+      &:hover {
+        box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.1);
+      }
+    }
+  }
+}

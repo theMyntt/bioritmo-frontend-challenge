@@ -1,0 +1,44 @@
+<div class="title">
+  <img src="/clock.png" title="Horário" alt="Horário" width="30px" />
+  <p>Horário</p>
+</div>
+<h2>Qual período quer treinar?</h2>
+<form class="time-options">
+  <div class="option">
+    <div class="option-control">
+      <input type="radio" id="morning" name="time" />
+      <label for="morning">Manhã</label>
+    </div>
+    <p>06:00 ás 12:00</p>
+  </div>
+  <div class="option">
+    <div class="option-control">
+      <input type="radio" id="afternoon" name="time" />
+      <label for="afternoon">Tarde</label>
+    </div>
+    <p>12:00 ás 18:00</p>
+  </div>
+  <div class="option">
+    <div class="option-control">
+      <input type="radio" id="night" name="time" />
+      <label for="night">Noite</label>
+    </div>
+    <p>18:00 ás 23:00</p>
+  </div>
+</form>
+<div class="incremental-options">
+  <div class="closed-gym">
+    <input type="checkbox" id="closed-gym" />
+    <label for="closed-gym">Exibir unidades fechadas</label>
+  </div>
+  <p>
+    Resultados encontrados:
+    <span>
+      {{ itemsCount() }}
+    </span>
+  </p>
+</div>
+<div class="buttons">
+  <button id="find">ENCONTRAR UNIDADE</button>
+  <button id="clear">Limpar</button>
+</div>
