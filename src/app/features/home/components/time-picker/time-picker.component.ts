@@ -11,7 +11,10 @@ import { selectLocationState } from '../../../../store/selectors/locations.selec
 import { Observable } from 'rxjs';
 import { TLocationDTO } from '../../../../types/locaction';
 import { CommonModule } from '@angular/common';
-import { fetchData } from '../../../../store/actions/location.actions';
+import {
+  fetchData,
+  queryForm,
+} from '../../../../store/actions/location.actions';
 
 @Component({
   selector: 'app-time-picker',
@@ -24,12 +27,24 @@ export class TimePickerComponent implements OnInit {
   protected itemsCount = signal(0);
   protected readonly locations$!: Observable<TLocationDTO>;
   protected timeForm = new FormGroup({
-    time: new FormControl('', [Validators.required]),
-    closedGyms: new FormControl(false),
+    time: new FormControl('06h', [Validators.required]),
+    closedGyms: new FormControl(false, Validators.required),
   });
 
   public submit() {
     console.log(this.timeForm);
+    if (this.timeForm.invalid) {
+      return;
+    }
+
+    this.store.dispatch(
+      queryForm({
+        form: {
+          closedGyms: this.timeForm.value.closedGyms ?? false,
+          time: this.timeForm.value.time ?? '06h',
+        },
+      })
+    );
   }
 
   constructor(private store: Store<AppState>) {
@@ -38,7 +53,7 @@ export class TimePickerComponent implements OnInit {
 
   ngOnInit(): void {
     this.locations$.subscribe((data: any) => {
-      this.itemsCount.set(data.locations.total); 
+      this.itemsCount.set(data.locations.total);
     });
   }
 }
