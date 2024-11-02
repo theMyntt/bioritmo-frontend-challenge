@@ -1,5 +1,4 @@
-<form>
-
+<form [formGroup]="timeForm" (ngSubmit)="submit()">
   <div class="title">
     <img src="/clock.png" title="Horário" alt="Horário" width="30px" />
     <p>Horário</p>
@@ -8,21 +7,21 @@
   <div class="time-options">
     <div class="option">
       <div class="option-control">
-        <input type="radio" id="morning" name="time" />
+        <input type="radio" id="morning" name="time" value="06h" [formControl]="timeForm.controls.time" />
         <label for="morning">Manhã</label>
       </div>
       <p>06:00 ás 12:00</p>
     </div>
     <div class="option">
       <div class="option-control">
-        <input type="radio" id="afternoon" name="time" />
+        <input type="radio" id="afternoon" name="time" value="12h" [formControl]="timeForm.controls.time"/>
         <label for="afternoon">Tarde</label>
       </div>
       <p>12:00 ás 18:00</p>
     </div>
     <div class="option">
       <div class="option-control">
-        <input type="radio" id="night" name="time" />
+        <input type="radio" id="night" name="time" value="18h" [formControl]="timeForm.controls.time"/>
         <label for="night">Noite</label>
       </div>
       <p>18:00 ás 23:00</p>
@@ -30,7 +29,7 @@
   </div>
   <div class="incremental-options">
     <div class="closed-gym">
-      <input type="checkbox" id="closed-gym" />
+      <input type="checkbox" id="closed-gym" [formControl]="timeForm.controls.closedGyms" />
       <label for="closed-gym">Exibir unidades fechadas</label>
     </div>
     <p>
@@ -41,7 +40,7 @@
     </p>
   </div>
   <div class="buttons">
-    <button id="find">ENCONTRAR UNIDADE</button>
+    <button id="find" type="submit">ENCONTRAR UNIDADE</button>
     <button id="clear">Limpar</button>
   </div>
 </form>
