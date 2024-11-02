@@ -12,12 +12,3 @@ export const fetchDataSuccess = createAction(
   '[Location] Fetch Data Success',
   props<{ locations: TLocationDTO }>()
 );
-
-export const queryForm = createAction(
-  '[Location] Query form',
-  props<{ form: IQueryForm }>()
-);
-export const queryFormSuccess = createAction(
-  '[Location] Query form Success',
-  props<{ form: IQueryForm }>()
-);

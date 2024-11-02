@@ -7,9 +7,3 @@ export const selectLocationState = createSelector(
   selectLocations,
   (locations) => locations
 );
-
-export const selectForm = (state: AppState) => state.form;
-export const  selectFormState = createSelector(
-  selectForm,
-  (form) => form
-);

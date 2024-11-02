@@ -1,14 +1,12 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import {
   fetchDataSuccess,
-  queryFormSuccess,
 } from '../actions/location.actions';
 import { TLocationDTO } from '../../types/locaction';
 import { IQueryForm } from '../../types/queryForm';
 
 export interface AppState {
   locations: TLocationDTO;
-  form: IQueryForm;
 }
 
 export const initializerState: AppState = {
@@ -19,10 +17,6 @@ export const initializerState: AppState = {
     total: 0,
     success: false,
   },
-  form: {
-    time: '',
-    closedGyms: false,
-  },
 };
 
 const _appReducer = createReducer(
@@ -31,10 +25,6 @@ const _appReducer = createReducer(
     ...state,
     locations: { ...state.locations, ...locations },
   })),
-  on(queryFormSuccess, (state, { form }) => ({
-    ...state,
-    form: { ...state.form, ...form },
-  }))
 );
 
 export function appReducer(state: AppState = initializerState, action: Action) {

@@ -13,7 +13,6 @@ import { TLocationDTO } from '../../../../types/locaction';
 import { CommonModule } from '@angular/common';
 import {
   fetchData,
-  queryForm,
 } from '../../../../store/actions/location.actions';
 
 @Component({
@@ -35,15 +34,6 @@ export class TimePickerComponent implements OnInit {
     if (this.timeForm.invalid) {
       return;
     }
-
-    // this.store.dispatch(
-    //   queryForm({
-    //     form: {
-    //       closedGyms: this.timeForm.value.closedGyms ?? false,
-    //       time: this.timeForm.value.time ?? '06h',
-    //     },
-    //   })
-    // );
 
     this.store.dispatch(fetchData({ form: {
       closedGyms: this.timeForm.value.closedGyms ?? false,
