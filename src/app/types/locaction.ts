@@ -15,7 +15,7 @@ export type TLocation = {
   towel:string
   fountain: string
   locker_room: string
-  schedule: Array<{
+  schedules: Array<{
     weekdays: string
     hour: string
   }>
