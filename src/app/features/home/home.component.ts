@@ -16,18 +16,10 @@ import { TimePickerComponent } from "./components/time-picker/time-picker.compon
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   protected readonly locations$!: Observable<TLocationDTO>
 
   constructor(private store: Store<AppState>) {
     this.locations$ = this.store.select(selectLocationState)
-  }
-
-  ngOnInit(): void {
-    this.fetchLocations()
-  }
-
-  protected fetchLocations() {
-    this.store.dispatch(fetchData())
   }
 }

@@ -32,19 +32,23 @@ export class TimePickerComponent implements OnInit {
   });
 
   public submit() {
-    console.log(this.timeForm);
     if (this.timeForm.invalid) {
       return;
     }
 
-    this.store.dispatch(
-      queryForm({
-        form: {
-          closedGyms: this.timeForm.value.closedGyms ?? false,
-          time: this.timeForm.value.time ?? '06h',
-        },
-      })
-    );
+    // this.store.dispatch(
+    //   queryForm({
+    //     form: {
+    //       closedGyms: this.timeForm.value.closedGyms ?? false,
+    //       time: this.timeForm.value.time ?? '06h',
+    //     },
+    //   })
+    // );
+
+    this.store.dispatch(fetchData({ form: {
+      closedGyms: this.timeForm.value.closedGyms ?? false,
+      time: this.timeForm.value.time ?? '06h',
+    } }));
   }
 
   constructor(private store: Store<AppState>) {
@@ -53,7 +57,7 @@ export class TimePickerComponent implements OnInit {
 
   ngOnInit(): void {
     this.locations$.subscribe((data: any) => {
-      this.itemsCount.set(data.locations.total);
+      this.itemsCount.set(data.locations.locations.length);
     });
   }
 }

@@ -14,7 +14,7 @@ export class LocationEffects {
     () => {
       return this.actions$.pipe(
         ofType(fetchData),
-        switchMap(() => this.locationsService.fetchLocations().pipe(
+        switchMap((action) => this.locationsService.fetchLocations(action.form).pipe(
           map((locations: TLocationDTO) => fetchDataSuccess({ locations })),
         ))
       )
