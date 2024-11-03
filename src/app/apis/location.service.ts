@@ -29,7 +29,7 @@ export class LocationService {
   private filterLocations(locations: TLocation[], form: IQueryForm): TLocation[] {
     return locations.filter(location => {
       const schedule = location.schedules.find(schedule => schedule.hour.substring(0,3) === form.time);
-      const isClosedGym = form.closedGyms && schedule?.hour === 'Fechada';
+      const isClosedGym = form.closedGyms && !location.opened;
       return schedule || isClosedGym;
     });
   }
