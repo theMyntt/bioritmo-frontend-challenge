@@ -1,27 +1,22 @@
-# BioritmoFrontendChallenge
+# BioRitmo Front-end Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+- Built in with Angular v18 SSR/SSG
+- Using NgRx
 
-## Development server
+<div align="center">
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183890595-779a7e64-3f43-4634-bad2-eceef4e80268.png" alt="Angular" title="Angular"/></code>
+</div>
+<div align="center">
+	<code><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ngrx/ngrx-original.svg" width="50" alt="NgRx" title="NgRx" /></code>
+</div>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requirements
 
-## Code scaffolding
+- Node 22.7.0
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Development use
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Clone this repo
+- Install dependencies with `npm i` or `yarn`
+- Run project with `npm rrun start` or `yarn start`
+- Start code!
