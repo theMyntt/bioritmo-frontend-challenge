@@ -41,6 +41,14 @@ export class TimePickerComponent implements OnInit {
     } }));
   }
 
+  protected clear() {
+    this.timeForm.reset({
+      time: '06h',
+      closedGyms: false,
+    });
+    this.submit()
+  }
+
   constructor(private store: Store<AppState>) {
     this.locations$ = this.store.select(selectLocationState);
   }
