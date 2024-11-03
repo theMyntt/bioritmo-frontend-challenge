@@ -1,6 +1,11 @@
 {
   "name": "bioritmo-frontend-challenge",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": {
+    "name": "Gabriel Araújo Lima",
+    "email": "gabriel.araujo2902@outlook.com"
+  },
+  "license": "UNLICENSED",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -42,5 +47,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.5.2"
+  },
+  "engines": {
+    "node": "22.7.0"
   }
 }
