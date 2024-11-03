@@ -16,5 +16,5 @@
 
 - Clone this repo
 - Install dependencies with `npm i` or `yarn`
-- Run project with `npm rrun start` or `yarn start`
+- Run project with `npm run start` or `yarn start`
 - Start code!
