@@ -1,7 +1,9 @@
 <app-brand-text></app-brand-text>
 <app-time-picker></app-time-picker>
-<ng-container *ngIf="locations$ | async as locations">
-  <ng-container *ngFor="let location of locations.locations">
-    <app-gym-card [gym]="location"/>
+<div class="gym-cards">
+  <ng-container *ngIf="locations$ | async as locations">
+    <ng-container *ngFor="let location of locations.locations">
+      <app-gym-card [gym]="location"/>
+    </ng-container>
   </ng-container>
-</ng-container>
+</div>

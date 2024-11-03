@@ -1,35 +1,57 @@
+$background-color: rgba(245, 245, 245, 1);
+$text-color: rgba(128, 128, 128, 1);
+$open-color: rgba(47, 192, 34, 1);
+$closed-color: red;
+
 :host {
-  background-color: rgb(245 245 245 / 1);
+  background-color: $background-color;
   padding: 20px;
-  min-height: 600px;
   display: grid;
-  display: grid;
-  grid-template-columns: 1fr; /* Uma coluna */
+  grid-template-areas:
+    "open"
+    "separator"
+    "closed"
+    "images";
+  grid-template-rows: 200px auto 200px 200px; 
   gap: 10px;
-  div> hr {
-    margin-top: 20px;
-  }
 
   div > h2,
   h3 {
     font-weight: 900;
   }
+
   div > div {
-    color: rgb(128 128 128 / 1);
+    color: $text-color;
   }
 }
+
+.separator {
+  grid-area: separator;
+  height: 5px; 
+  border-top: 2px solid #e5e7eb;
+}
+
 .open {
-  color: rgb(47 192 34 / 1);
+  color: $open-color;
   font-weight: 900;
+  grid-area: open;
+  align-self: center; 
 }
+
 .closed {
-  color: red;
+  color: $closed-color;
   font-weight: 900;
+  grid-area: closed;
+  align-self: center; 
 }
+
 .images {
   display: flex;
   gap: 10px;
   align-items: center;
+  grid-area: images;
+  align-self: center; 
+
   img {
     width: 50%;
     max-width: 125px;

@@ -2,8 +2,8 @@
   <p [className]="gym().opened ? 'open' : 'closed'">{{ gym().opened ? 'Aberto' : 'Fechada' }}</p>
   <h2> {{ gym().title }}</h2>
   <div [innerHTML]="gym().content"></div>
-  <hr />
 </div>
+<div class="separator"></div>
 <div class="images">
   @if (gym().mask == "required") {
     <img src="/required-mask.png" alt="Mascara Obrigatoria" title="Máscara Obrigatória" />
