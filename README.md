@@ -5,8 +5,6 @@
 
 <div align="center">
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183890595-779a7e64-3f43-4634-bad2-eceef4e80268.png" alt="Angular" title="Angular"/></code>
-</div>
-<div align="center">
 	<code><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ngrx/ngrx-original.svg" width="50" alt="NgRx" title="NgRx" /></code>
 </div>
 
