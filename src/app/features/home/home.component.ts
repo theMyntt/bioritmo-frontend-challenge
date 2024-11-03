@@ -29,9 +29,5 @@ export class HomeComponent {
 
   constructor(private store: Store<AppState>) {
     this.locations$ = this.store.select(selectLocations);
-
-    this.locations$.subscribe((locations) => {
-      console.log(locations);
-    });
   }
 }
