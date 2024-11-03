@@ -7,6 +7,9 @@
   flex-direction: column;
   gap: 10px;
   form {
+    display: inherit;
+    flex-direction: inherit;
+    gap: inherit;
     .title {
       display: flex;
       align-items: center;
