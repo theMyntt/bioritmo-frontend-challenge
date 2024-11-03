@@ -1,0 +1,44 @@
+<div>
+  <p [className]="gym().opened ? 'open' : 'closed'">{{ gym().opened ? 'Aberto' : 'Fechada' }}</p>
+  <h2> {{ gym().title }}</h2>
+  <div [innerHTML]="gym().content"></div>
+  <hr />
+</div>
+<div class="images">
+  @if (gym().mask == "required") {
+    <img src="/required-mask.png" alt="Mascara Obrigatoria" title="Máscara Obrigatória" />
+  }
+  @else {
+    <img src="/recommended-mask.png" alt="Mascara Recomendada" title="Máscara Recomendada" />
+  }
+
+  @if (gym().towel == "required") {
+    <img src="/required-towel.png" alt="Toalha Obrigatoria" title="Toalha Obrigatória"/>
+  }
+  @else {
+    <img src="/recommended-towel.png" alt="Toalha Recomendada" title="Toalha Recomendada"/>
+  }
+
+  @if (gym().fountain == "partial") {
+    <img src="/partial-water.png" alt="Bebedouro Parcial" title="Bebedouro Parcial"/>
+  }
+  @else {
+    <img src="/not-allowed-water.png" alt="Bebedouro Proibido" title="Bebedouro Fechado" />
+  }
+
+  @if (gym().locker_room == "partial") {
+    <img src="/partial-lockerroom.png" alt="Chuveiro Parcial" title="Vestuário Parcial" />
+  }
+  @else if (gym().locker_room == "allowed") {
+    <img src="/allowed-lockerroom.png" alt="Chuveiro Permitido" title="Vestuário Permitido" />
+  }
+  @else {
+    <img src="/closed-lockerroom.png" alt="Chuveiro Proibido" title="Vestuário Fechado"/>
+  }
+</div>
+<div>
+  @for (schedule of gym().schedules; track $index) {
+    <h3>{{ schedule.weekdays }}</h3>
+    <p>{{ schedule.hour }}</p>
+  }
+</div>

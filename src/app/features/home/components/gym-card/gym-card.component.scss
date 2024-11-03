@@ -1,0 +1,38 @@
+:host {
+  background-color: rgb(245 245 245 / 1);
+  padding: 20px;
+  min-height: 600px;
+  display: grid;
+  display: grid;
+  grid-template-columns: 1fr; /* Uma coluna */
+  gap: 10px;
+  div> hr {
+    margin-top: 20px;
+  }
+
+  div > h2,
+  h3 {
+    font-weight: 900;
+  }
+  div > div {
+    color: rgb(128 128 128 / 1);
+  }
+}
+.open {
+  color: rgb(47 192 34 / 1);
+  font-weight: 900;
+}
+.closed {
+  color: red;
+  font-weight: 900;
+}
+.images {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  img {
+    width: 50%;
+    max-width: 125px;
+    height: fit-content;
+  }
+}

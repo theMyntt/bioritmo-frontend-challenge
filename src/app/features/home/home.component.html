@@ -1,6 +1,7 @@
 <app-brand-text></app-brand-text>
 <app-time-picker></app-time-picker>
-<!-- <button (click)="fetchLocations()">carregar</button>
-<div *ngIf="locations$ | async as locations">
-  <p> {{ locations | json }} </p>
-</div> -->
+<ng-container *ngIf="locations$ | async as locations">
+  <ng-container *ngFor="let location of locations.locations">
+    <app-gym-card [gym]="location"/>
+  </ng-container>
+</ng-container>
