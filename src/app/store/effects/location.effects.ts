@@ -3,7 +3,6 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { LocationService } from '../../apis/location.service';
 import { fetchData, fetchDataSuccess } from '../actions/location.actions';
 import { catchError, map, mergeMap, of, switchMap } from 'rxjs';
-import { TLocationDTO } from '../../types/locaction';
 
 @Injectable()
 export class LocationEffects {
@@ -15,7 +14,7 @@ export class LocationEffects {
       return this.actions$.pipe(
         ofType(fetchData),
         switchMap((action) => this.locationsService.fetchLocations(action.form).pipe(
-          map((locations: TLocationDTO) => fetchDataSuccess({ locations })),
+          map((locations) => fetchDataSuccess(locations)),
         ))
       )
     }

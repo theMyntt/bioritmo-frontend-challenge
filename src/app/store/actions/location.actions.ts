@@ -10,5 +10,5 @@ export const fetchData = createAction(
 );
 export const fetchDataSuccess = createAction(
   '[Location] Fetch Data Success',
-  props<{ locations: TLocationDTO }>()
+  props<TLocationDTO>()
 );

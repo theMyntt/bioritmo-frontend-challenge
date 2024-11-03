@@ -47,7 +47,7 @@ export class TimePickerComponent implements OnInit {
 
   ngOnInit(): void {
     this.locations$.subscribe((data: any) => {
-      this.itemsCount.set(data.locations.locations.length);
+      this.itemsCount.set(data.locations.length);
     });
   }
 }
