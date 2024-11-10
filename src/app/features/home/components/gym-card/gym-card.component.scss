@@ -51,10 +51,10 @@ $closed-color: red;
   align-items: center;
   grid-area: images;
   align-self: center; 
+  justify-content: center;
 
   img {
-    width: 50%;
-    max-width: 125px;
-    height: fit-content;
+    width: 40%;
+    max-width: 40px;
   }
 }
